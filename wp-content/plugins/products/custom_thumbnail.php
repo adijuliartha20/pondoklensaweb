@@ -62,10 +62,11 @@ function taxonomy_columns_type_manage( $out ,$column_name, $term_id) {
         $term_vals = get_term_meta($term_id);
         if(isset($term_vals) && !empty($term_vals)){
             foreach($term_vals as $key=>$val){
-                ?>
-                <img width="50" height="50" src="<?php echo  $val[0]; ?>" />
-                <?php
-                //return $val[0];
+                if(isset($val[0]) && !empty($val[0])){
+                    ?>
+                    <img width="50" height="50" src="<?php echo  $val[0]; ?>" />
+                    <?php
+                }
             } 
         }
     }

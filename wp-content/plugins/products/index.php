@@ -25,6 +25,10 @@
 }
 add_action('init', 'wporg_cpt_products');
 
+add_action( 'init', function() {
+    remove_post_type_support( 'products', 'editor' );
+}, 99);
+
 /*Registrasi Category Custom Post Type*/
 function wporg_rtc_products() {
     $name = 'Products Categories';
@@ -99,4 +103,5 @@ function tsm_convert_id_to_term_in_query($query) {
 }
 
 include 'custom_thumbnail.php';
+include 'custom_table.php';
 ?>

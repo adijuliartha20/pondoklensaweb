@@ -47,4 +47,27 @@ function save_taxonomy_custom_meta_field( $term_id ) {
 add_action( 'edited_'.$slug_taxonomy_product, 'save_taxonomy_custom_meta_field', 10, 2 );  
 add_action( 'create_'.$slug_taxonomy_product, 'save_taxonomy_custom_meta_field', 10, 2 );
 //https://artisansweb.net/add-image-field-taxonomy-wordpress/
+
+//Show custom column
+add_filter( 'manage_edit-'.$slug_taxonomy_product.'_columns', 'taxonomy_columns_type');
+add_filter( 'manage_'.$slug_taxonomy_product.'_custom_column', 'taxonomy_columns_type_manage', 10, 3);
+ 
+function taxonomy_columns_type($columns) {
+    $columns['keywords'] = __( 'Thumbnail', 'dd_tax' );
+    return $columns;
+}
+function taxonomy_columns_type_manage( $out ,$column_name, $term_id) {
+    if($column_name=='keywords'){
+        //echo $term_id;
+        $term_vals = get_term_meta($term_id);
+        if(isset($term_vals) && !empty($term_vals)){
+            foreach($term_vals as $key=>$val){
+                ?>
+                <img width="50" height="50" src="<?php echo  $val[0]; ?>" />
+                <?php
+                //return $val[0];
+            } 
+        }
+    }
+}
 ?>

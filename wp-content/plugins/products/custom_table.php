@@ -109,11 +109,19 @@ function temp_template_metabox_products($arr_meta, $post){
 			}else if($type=='wp_editor'){
 				 if(isset($dt_field['hide_button']) &&  $dt_field['hide_button']){
 				 	echo '<style> 
-				 				#wp-'.$key.'-wrap .mce-toolbar-grp {display: none;} 
-				 				#wp-'.$key.'-wrap .wp-editor-tabs {display: none;}
+				 				/*#wp-'.$key.'-wrap .mce-toolbar-grp {display: none;} 
+				 				#wp-'.$key.'-wrap .wp-editor-tabs {display: none;}*/
 				 	   </style>';	
 				 }
-                 $settings = array();
+
+                $args = array(
+                    'tinymce'       => array(
+                        'toolbar1'      => 'table,bold,italic,underline,separator,alignleft,aligncenter,alignright,separator,link,unlink,undo,redo',
+                        'toolbar2'      => '',
+                        'toolbar3'      => '',
+                    ),
+                );
+                
 				wp_editor( $value_meta, $key );
 			}else{	
 				echo '<input type="text" id="'.$key.'" name="'.$key.'" value="' . esc_attr( $value_meta ) . '" size="70" />';

@@ -1,0 +1,12 @@
+sass wp-content/themes/pondoklensa/assets/sass/style.scss wp-content/themes/pondoklensa/style.css
+
+
+14 = 0.875
+16 = 1
+18 = 1.125
+20 = 1.25
+24 = 1.5
+32 = 2
+40 = 2.5
+48 = 3
+72 = 4.5

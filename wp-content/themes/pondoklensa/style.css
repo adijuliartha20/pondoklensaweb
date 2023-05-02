@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
 Theme Name: Pondok Lensa
 Theme URI: http://locografis.com
@@ -6,3 +7,562 @@ Author URI: http://pondoklensa.com
 Description: 
 Version: 1.0.0
 */
+/**
+ * SETTINGS
+ * File-header..........The file header for the themes style.css file.
+ * Fonts................Any font files, if the project needs specific fonts.
+ * Global...............Project-specific, globally available variables.
+ *
+ * TOOLS
+ * Functions............Global functions.
+ * Mixins...............Global mixins.
+ *
+ * GENERIC
+ * Normalize.css........Normalise browser defaults.
+ * Breakpoints..........Mixins and variables for responsive styles
+ * Vertical-margins.....Vertical spacing for the main components.
+ * Reset................Reset specific elements to make them easier to style in other contexts.
+ * Clearings............Clearings for the main components.
+ *
+ * ELEMENTS
+ * Blockquote...........Default blockquote.
+ * Forms................Element-level form styling.
+ * Headings.............H1–H6
+ * Links................Default links.
+ * Lists................Default lists.
+ * Media................Images, Figure, Figcaption, Embed, iFrame, Objects, Video.
+ *
+ * BLOCKS
+ * Audio................Specific styles for the audio block.
+ * Button...............Specific styles for the button block.
+ * Code.................Specific styles for the code block.
+ * Columns..............Specific styles for the columns block.
+ * Cover................Specific styles for the cover block.
+ * File.................Specific styles for the file block.
+ * Gallery..............Specific styles for the gallery block.
+ * Group................Specific styles for the group block.
+ * Heading..............Specific styles for the heading block.
+ * Image................Specific styles for the image block.
+ * Latest comments......Specific styles for the latest comments block.
+ * Latest posts.........Specific styles for the latest posts block.
+ * Legacy...............Specific styles for the legacy gallery.
+ * List.................Specific styles for the list block.
+ * Media text...........Specific styles for the media and text block.
+ * Navigation...........Specific styles for the navigation block.
+ * Paragraph............Specific styles for the paragraph block.
+ * Pullquote............Specific styles for the pullquote block.
+ * Quote................Specific styles for the quote block.
+ * Search...............Specific styles for the search block.
+ * Separator............Specific styles for the separator block.
+ * Table................Specific styles for the table block.
+ * Verse................Specific styles for the verse block.
+ * Video................Specific styles for the video block.
+ * Utilities............Block alignments.
+ *
+ * COMPONENTS
+ * Header...............Header styles.
+ * Footer...............Footer styles.
+ * Comments.............Comment styles.
+ * Archives.............Archive styles.
+ * 404..................404 styles.
+ * Search...............Search styles.
+ * Navigation...........Navigation styles.
+ * Footer Navigation....Footer Navigation styles.
+ * Pagination...........Pagination styles.
+ * Single...............Single page and post styles.
+ * Posts and pages......Misc, sticky post styles.
+ * Entry................Entry, author biography.
+ * Widget...............Widget styles.
+ * Editor...............Editor styles.
+ *
+ * UTILITIES
+ * A11y.................Screen reader text, prefers reduced motion etc.
+ * Color Palette........Classes for the color palette colors.
+ * Editor Font Sizes....Editor Font Sizes.
+ * Measure..............The width of a line of text, in characters.
+ */
+/* Categories 01 to 03 are the basics. */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&display=swap");
+/* Variables */
+:root {
+  /* Font Family */
+  --global--font-primary: font-family: "Noto Sans", sans-serif;
+  --global--font-secondary: font-family: "Noto Sans", sans-serif;
+  /* Font Size */
+  --global--font-size-xs: 0.875rem;
+  --global--font-size-sm: 1rem;
+  --global--font-size-md: 1.125rem;
+  --global--font-size-lg: 1.25rem;
+  --global--font-size-xl: 1.5;
+  --global--font-size-xxl: 1.75rem;
+  --global--font-size-3l: 2rem;
+  --global--font-size-4l: 2.5rem;
+  --global--font-size-5l: 3rem;
+  --global--font-size-6l: 3.5rem;
+  --global--letter-spacing: normal;
+  /* Headings */
+  --heading--font-family: var(--global--font-primary);
+  --heading--font-size-h6: var(--global--font-size-md);
+  --heading--font-size-h5: var(--global--font-size-xl);
+  --heading--font-size-h4: var(--global--font-size-xxl);
+  --heading--font-size-h3: var(--global--font-size-3l);
+  --heading--font-size-h2: var(--global--font-size-4l);
+  --heading--font-size-h1: var(--global--font-size-5l);
+  --heading--font-size-display: var(--global--font-size-6l);
+  --heading--line-height-h6: 1.125rem;
+  --heading--line-height-h5: 1.5rem;
+  --heading--line-height-h4: 1.75rem;
+  --heading--line-height-h3: 2rem;
+  --heading--line-height-h2: 2.5rem;
+  --heading--line-height-h1: 3rem;
+  --heading--line-height-display: 3.5rem;
+  --heading--letter-spacing-h6: -1%;
+  --heading--letter-spacing-h5: -1%;
+  --heading--letter-spacing-h4: -1%;
+  --heading--letter-spacing-h3: -1%;
+  --heading--letter-spacing-h2: -1%;
+  --heading--letter-spacing-h1: 0%;
+  --heading--letter-spacing-display: 0%;
+  --heading--font-weight: 700;
+  /* Colors */
+  --global--color-primary-black: #000000;
+  --global--color-primary-white: #FFFFFF;
+  --global--color-secondary-light-brown: #C1AB7E;
+  --global--color-secondary-light-grey: #F6F6F6;
+  --global--color-blackscale-black-100: #0E0E0E;
+  --global--color-blackscale-black-90: #424344;
+  --global--color-blackscale-black-80: #616364;
+  --global--color-blackscale-black-70: #747678;
+  --global--color-blackscale-black-60: #9A9DA0;
+  --global--color-blackscale-black-50: #BCBFC2;
+  --global--color-blackscale-black-40: #D8DDE0;
+  --global--color-blackscale-black-30: #E4E9ED;
+  --global--color-blackscale-black-20: #EEF0F8;
+  --global--color-blackscale-black-10: #FFFFFF;
+  --global--color-success-main: #00AE46;
+  --global--color-success-surface: #E6F7ED;
+  --global--color-success-border: #99DFB5;
+  --global--color-success-hover: #007A31;
+  --global--color-success-pressed: #00461C;
+  --global--color-warning-main: #F9C612;
+  --global--color-warning-surface: #FEF4E7;
+  --global--color-warning-border: #FDD2A0;
+  --global--color-warning-hover: #AE640D;
+  --global--color-warning-pressed: #643907;
+  --global--color-danger-main: #CD2E00;
+  --global--color-danger-surface: #FAEAE6;
+  --global--color-danger-border: #EBAB99;
+  --global--color-danger-hover: #902000;
+  --global--color-danger-pressed: #521200;
+  --global--color-info-main: #3267E3;
+  --global--color-info-surface: #EBF0FC;
+  --global--color-info-border: #ADC2F4;
+  --global--color-info-hover: #23489F;
+  --global--color-info-pressed: #14295B;
+}
+
+h1 {
+  font-size: var(--heading--font-size-h1);
+}
+
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers.
+ */
+body {
+  margin: 0;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+main {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+  font-family: monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+a {
+  background-color: transparent;
+  text-decoration-thickness: 1px;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  text-decoration-style: dotted; /* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+  font-family: monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+img {
+  border-style: none;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input { /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select { /* 1 */
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type=search] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+details {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+  display: list-item;
+}
+
+/* Misc
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10+.
+ */
+template {
+  display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+[hidden] {
+  display: none;
+}
+
+/**
+ * Reset specific elements to make them easier to style in other contexts.
+ */
+html,
+body,
+p,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+blockquote,
+figure,
+fieldset,
+form,
+legend,
+textarea,
+pre,
+iframe,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+/**
+ * Apply generic border-box to all elements.
+ * See:
+ * https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+html {
+  /* Apply border-box across the entire page. */
+  box-sizing: border-box;
+  font-family: var(--global--font-secondary);
+  line-height: var(--global--line-height-body);
+}
+
+/**
+ * Relax the definition a bit, to allow components to override it manually.
+ */
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: var(--global--font-size-base);
+  font-weight: normal;
+  color: var(--global--color-primary);
+  text-align: left;
+  background-color: var(--global--color-background);
+}
+
+button {
+  cursor: pointer;
+}
+
+.clear:before,
+.clear:after,
+.entry-content:before,
+.entry-content:after,
+.comment-content:before,
+.comment-content:after,
+.site-header:before,
+.site-header:after,
+.site-content:before,
+.site-content:after,
+.site-footer:before,
+.site-footer:after {
+  content: "";
+  display: table;
+  table-layout: fixed;
+}
+
+.clear:after,
+.entry-content:after,
+.comment-content:after,
+.site-header:after,
+.site-content:after,
+.site-footer:after {
+  clear: both;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,95 @@
+/* Variables */
+
+// Vertical Rhythm Multiplier
+$baseline-unit: 10px;
+
+:root {
+
+	/* Font Family */
+	--global--font-primary: font-family: 'Noto Sans', sans-serif;
+	--global--font-secondary: font-family: 'Noto Sans', sans-serif;
+	
+	/* Font Size */
+	--global--font-size-xs: 0.875rem; // 14px
+	--global--font-size-sm: 1rem; // 16px
+	--global--font-size-md: 1.125rem; // 18px
+	--global--font-size-lg: 1.25rem; // 20px
+	--global--font-size-xl: 1.5; // 24px 
+	--global--font-size-xxl: 1.75rem; // 28px 
+	--global--font-size-3l: 2rem; // 32px
+	--global--font-size-4l: 2.5rem; // 40px
+	--global--font-size-5l: 3rem; // 48px 
+	--global--font-size-6l: 3.5rem; // 72px 
+	--global--letter-spacing: normal;
+
+	/* Headings */
+	--heading--font-family: var(--global--font-primary);
+
+	--heading--font-size-h6: var(--global--font-size-md);
+	--heading--font-size-h5: var(--global--font-size-xl);
+	--heading--font-size-h4: var(--global--font-size-xxl);
+	--heading--font-size-h3: var(--global--font-size-3l);
+	--heading--font-size-h2: var(--global--font-size-4l);
+	--heading--font-size-h1: var(--global--font-size-5l);
+	--heading--font-size-display: var(--global--font-size-6l);
+
+	--heading--line-height-h6: 1.125rem;
+	--heading--line-height-h5: 1.5rem;
+	--heading--line-height-h4: 1.75rem;
+	--heading--line-height-h3: 2rem;
+	--heading--line-height-h2: 2.5rem;
+	--heading--line-height-h1: 3rem;
+	--heading--line-height-display: 3.5rem;
+
+	--heading--letter-spacing-h6: -1%;
+	--heading--letter-spacing-h5: -1%;
+	--heading--letter-spacing-h4: -1%;
+	--heading--letter-spacing-h3: -1%;
+	--heading--letter-spacing-h2: -1%;
+	--heading--letter-spacing-h1: 0%;
+	--heading--letter-spacing-display: 0%;
+
+	--heading--font-weight: 700;
+
+	/* Colors */
+	--global--color-primary-black: #000000;
+	--global--color-primary-white: #FFFFFF;
+
+	--global--color-secondary-light-brown: #C1AB7E;
+	--global--color-secondary-light-grey: #F6F6F6;
+
+	--global--color-blackscale-black-100: #0E0E0E;
+	--global--color-blackscale-black-90: #424344;
+	--global--color-blackscale-black-80: #616364;
+	--global--color-blackscale-black-70: #747678;
+	--global--color-blackscale-black-60: #9A9DA0;
+	--global--color-blackscale-black-50: #BCBFC2;
+	--global--color-blackscale-black-40: #D8DDE0;
+	--global--color-blackscale-black-30: #E4E9ED;
+	--global--color-blackscale-black-20: #EEF0F8;
+	--global--color-blackscale-black-10: #FFFFFF;
+
+	--global--color-success-main: #00AE46;
+	--global--color-success-surface: #E6F7ED;
+	--global--color-success-border: #99DFB5;
+	--global--color-success-hover: #007A31;
+	--global--color-success-pressed: #00461C;
+
+	--global--color-warning-main: #F9C612;
+	--global--color-warning-surface: #FEF4E7;
+	--global--color-warning-border: #FDD2A0;
+	--global--color-warning-hover: #AE640D;
+	--global--color-warning-pressed: #643907;
+
+	--global--color-danger-main: #CD2E00;
+	--global--color-danger-surface: #FAEAE6;
+	--global--color-danger-border: #EBAB99;
+	--global--color-danger-hover: #902000;
+	--global--color-danger-pressed: #521200;
+
+	--global--color-info-main: #3267E3;
+	--global--color-info-surface: #EBF0FC;
+	--global--color-info-border: #ADC2F4;
+	--global--color-info-hover: #23489F;
+	--global--color-info-pressed: #14295B;
+}
